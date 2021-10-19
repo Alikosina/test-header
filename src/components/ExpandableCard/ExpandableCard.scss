@@ -1,0 +1,41 @@
+.expandable-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    &_expanded {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  &__header-title {
+    margin: 0;
+  }
+  &__arrow {
+    width: 16px;
+    transition: 0.5s;
+
+    &_active {
+      transform: rotate(180deg);
+    }
+  }
+  &__body {
+    padding: 20px;
+    overflow: hidden;
+    max-height: 0;
+    animation: expand 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes expand {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 300px;
+  }
+}
